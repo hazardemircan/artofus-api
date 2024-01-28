@@ -9,12 +9,16 @@ class bitMapService {
     this._colorRepo = new ColorRepo();
   }
   async createMap(w, h) {
-    var result = await map.createMap(w, h);
+    var result = await this._mapRepo.createMap(w, h);
     return result;
   }
   async getInitialData() {
     var activeMap=await this._mapRepo.getActiveMap();
     var bitsOfActiveMap=await this._bitRepo.getBitsByMap(activeMap.id);
+     //console.log(activeMap);
+
+  //  var a= await bitsOfActiveMap.forEach((bit,index,arr)=>{arr[index].color=this._colorRepo.getColorHexById(arr[index].color)});
+  //   console.log(bitsOfActiveMap);
     var colors = await this._colorRepo.getActiveColors();
 
     return {map:activeMap,bits:bitsOfActiveMap,colors:colors}

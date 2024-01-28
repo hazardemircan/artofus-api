@@ -22,6 +22,9 @@ class ColorRepo {
   async getActiveColors(){
     return await this.model.find({active:true});
   }
+  async getColorHexById(id){
+    return await this.model.findOne({id:id});
+  }
    
 }
 
