@@ -28,7 +28,7 @@ module.exports = (io) => {
 
     
         try {
-          const map = await _bitMapService.getInitialData();
+          const map = await _bitMapService.getBits();
           io.emit("updateBits", map);
         } catch (error) {
           console.error("Error while getting map:", error);

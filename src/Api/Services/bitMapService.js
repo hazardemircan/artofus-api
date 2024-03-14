@@ -28,6 +28,12 @@ class bitMapService {
     var bitsOfMap = await this._bitRepo.getBitsByMap(map.id);
     return { map: map, bits: bitsOfMap};
   }
+  async getBits() {
+    var activeMap=await this._mapRepo.getActiveMap();
+    var bitsOfActiveMap=await this._bitRepo.getBitsByMap(activeMap.id);
+
+    return {bits: bitsOfActiveMap};
+  }
   async changeBitColor(id, color) {
     var bit = await this._bitRepo.getBitById(id);
 
