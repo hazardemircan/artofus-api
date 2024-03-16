@@ -12,7 +12,7 @@ class ColorRepo {
       { collection: "colors" }
     );
 
-    if (mongoose.models.color) {
+    if (mongoose.models.Color) {
       this.model = mongoose.model("Color");
     } else {
       this.model = mongoose.model("Color", colorSchema);
