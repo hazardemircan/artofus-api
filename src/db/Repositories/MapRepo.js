@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const BitRepo = require("./BitRepo");
 const { ObjectId } = require("mongodb");
+const { COLLECTION_MAPS, MODEL_MAP } = require('./constants');
 
 class MapRepo {
   constructor() {
@@ -12,14 +13,14 @@ class MapRepo {
         createdAt: Date,
         updatedAt: Date,
       },
-      { collection: "maps" }
+      { collection: COLLECTION_MAPS }
     );
 
     // Create the model if it doesn't already exist
     if (mongoose.models.map) {
-      this.model = mongoose.model("map");
+      this.model = mongoose.model(MODEL_MAP);
     } else {
-      this.model = mongoose.model("map", mapSchema);
+      this.model = mongoose.model(MODEL_MAP, mapSchema);
     }
   }
 

@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
-const { ObjectId } = require("mongodb");
-
+const { COLLECTION_BITS, MODEL_BIT } = require('./constants');
 class BitRepo {
   constructor() {
     const bitSchema = new mongoose.Schema({
@@ -10,13 +9,13 @@ class BitRepo {
       locked: Boolean,
       createdAt:Date,
       updatedAt: Date,
-    }, { collection: 'bits' });
+    }, { collection: COLLECTION_BITS });
 
     // Create the model if it doesn't already exist
     if (mongoose.models.Bit) {
-      this.model = mongoose.model('Bit');
+      this.model = mongoose.model(MODEL_BIT);
     } else {
-      this.model = mongoose.model('Bit', bitSchema);
+      this.model = mongoose.model(MODEL_BIT, bitSchema);
     }
   }
 
