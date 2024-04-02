@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { COLLECTION_BITS, MODEL_BIT } = require('./constants');
+const { COLLECTION_BITS, MODEL_BIT } = require('../constants');
 class BitRepo {
   constructor() {
     const bitSchema = new mongoose.Schema({

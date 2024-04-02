@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const BitRepo = require("./BitRepo");
 const { ObjectId } = require("mongodb");
-const { COLLECTION_MAPS, MODEL_MAP } = require('./constants');
+const { COLLECTION_MAPS, MODEL_MAP } = require('../constants');
 
 class MapRepo {
   constructor() {

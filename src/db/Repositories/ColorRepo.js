@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { COLLECTION_COLORS, MODEL_COLOR } = require('./constants');
+const { COLLECTION_COLORS, MODEL_COLOR } = require('../constants');
 
 class ColorRepo {
   constructor() {
